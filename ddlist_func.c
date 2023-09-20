@@ -116,13 +116,13 @@ size_t print_dlistint(const stack_t *h, unsigned int top_only, strMode mode)
 	}
 	if (mode == STR)
 	{
-		
+
 		if (top_only && (h == NULL))
 		{
 			/*printf("debugger: printing top only\n");*/
 			/*printf("debugger: empty top\n");*/
 			print_error(LINE, "can't %s, stack empty\n", stack.line_num, stack.opcode);
-			
+
 		}
 		printf("\n");
 	}
