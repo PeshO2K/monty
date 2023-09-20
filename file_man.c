@@ -14,7 +14,7 @@ void open_file(char *filename)
 	file = fopen(filename, "r");
 	if (!file)
 	{
-		print_error(0, "Can't open file <%s>\n", filename);
+		print_error(0, "Can't open file %s\n", filename);
 	}
 	read_file(file);
 	fclose(file);
