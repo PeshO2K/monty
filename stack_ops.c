@@ -55,7 +55,7 @@ void _pop(stack_t **top, unsigned int line_num)
 	/**error handling goes here*/
 	if (*top == NULL)
 	{
-		print_error(LINE, "can't %s, an empty stack\n", line_num, stack.opcode);
+		print_error(LINE, "can't %s an empty stack\n", line_num, stack.opcode);
 	}
 
 	next = (*top)->next;
