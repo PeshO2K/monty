@@ -41,12 +41,12 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * eMode - Enumeration of different modes
+ * enum eMode - Enumeration of different modes
  * @ERROR: Error mode
  * @USAGE: Usage mode
  * @LINE: Line mode
  */
-typedef enum
+typedef enum eMode
 {
 	ERROR,
 	USAGE,
@@ -54,29 +54,29 @@ typedef enum
 } eMode;
 
 /**
- * opMode - Enumeration of operation modes
+ * enum opMode - Enumeration of operation modes
  * @STACK: Stack mode
  * @QUEUE: Queue mode
  */
-typedef enum
+typedef enum opMode
 {
 	STACK,
 	QUEUE
 } opMode;
 
 /**
- * strMode - Enumeration of string modes
+ * enum strMode - Enumeration of string modes
  * @INT: Integer mode
  * @STR: String mode
  */
-typedef enum
+typedef enum strMode
 {
 	INT,
 	STR
 } strMode;
 
 /**
- * stack_vars - Structure containing stack variables
+ * struct stack_vars_s - contains stack variables
  * @mode: Operation mode
  * @top: Pointer to the top of the stack
  * @line: Line string
@@ -85,9 +85,9 @@ typedef enum
  * @n: Integer n
  * @line_num: Line number
  *
- * Description: This structure contains various variables related to a stack.
+ * Description: contains various variables related to a stack.
  */
-typedef struct
+typedef struct stack_vars_s
 {
 	opMode mode;
 	stack_t *top;
@@ -102,14 +102,14 @@ typedef struct
 extern stack_vars stack;
 
 /**
- * enum - Enumeration of operators
+ * enum operator - Enumeration of operators
  * @ADD: Addition operator
  * @SUB: Subtraction operator
  * @MUL: Multiplication operator
  * @DIV: Division operator
  * @MOD: Modulus operator
  */
-typedef enum
+typedef enum operator
 {
 	ADD,
 	SUB,
