@@ -41,7 +41,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * enum eMode - Enumeration of different modes
+ * eMode - Enumeration of different modes
  * @ERROR: Error mode
  * @USAGE: Usage mode
  * @LINE: Line mode
@@ -54,7 +54,7 @@ typedef enum
 } eMode;
 
 /**
- * enum opMode - Enumeration of operation modes
+ * opMode - Enumeration of operation modes
  * @STACK: Stack mode
  * @QUEUE: Queue mode
  */
@@ -65,7 +65,7 @@ typedef enum
 } opMode;
 
 /**
- * enum strMode - Enumeration of string modes
+ * strMode - Enumeration of string modes
  * @INT: Integer mode
  * @STR: String mode
  */
@@ -76,7 +76,7 @@ typedef enum
 } strMode;
 
 /**
- * struct stack_vars - Structure containing stack variables
+ * stack_vars - Structure containing stack variables
  * @mode: Operation mode
  * @top: Pointer to the top of the stack
  * @line: Line string
@@ -102,7 +102,7 @@ typedef struct
 extern stack_vars stack;
 
 /**
- * enum operator - Enumeration of operators
+ * operator - Enumeration of operators
  * @ADD: Addition operator
  * @SUB: Subtraction operator
  * @MUL: Multiplication operator
