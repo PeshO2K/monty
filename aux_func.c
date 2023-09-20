@@ -27,7 +27,7 @@ void print_error(eMode mode, const char *format, ...)
 			fprintf(stderr, "USAGE: ");
 			break;
 		case LINE:
-			fprintf(stderr, "L<%u>: ", va_arg(args, unsigned int));
+			fprintf(stderr, "L%u: ", va_arg(args, unsigned int));
 			break;
 	}
 

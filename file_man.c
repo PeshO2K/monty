@@ -30,11 +30,13 @@ void open_file(char *filename)
 void read_file(FILE *file)
 {
 	size_t len = 0;
-	ssize_t n_bytes = 0;
+	/*ssize_t n_bytes = 0;*/
 
-	for (stack.line_num = 1; n_bytes != -1; stack.line_num++)
+	for (stack.line_num = 1;
+	getline(&stack.line, &len, file) != -1;
+	stack.line_num++)
 	{
-		n_bytes = getline(&stack.line, &len, file);
+		/*n_bytes = getline(&stack.line, &len, file);*/
 		if (stack.line == NULL)
 		{
 			print_error(0, MEM_ERR);
@@ -96,6 +98,7 @@ void get_op_func(void)
 	{
 		if (strcmp(op_funcs[i].opcode, stack.opcode) == 0)
 		{
+			/*printf("Debugger: fxn found %s\n", stack.opcode);*/
 			op_funcs[i].f(&(stack.top), stack.line_num);
 			return;
 		}
