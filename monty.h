@@ -10,6 +10,7 @@
 #define DELIM " \n"
 #define MEM_ERR "malloc failed\n"
 #define LEN_ERR "can't %s, stack too short\n"
+#define RANGE_ERR "can't %s, value out of range\n"
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer

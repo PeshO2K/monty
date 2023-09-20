@@ -132,7 +132,6 @@ size_t print_dlistint(const stack_t *h, unsigned int top_only, strMode mode)
 }
 /**
  * print_string - Prints a string
- * 
  * @c: Integer c
  * @top_only: The top only
  *
@@ -145,7 +144,7 @@ int print_string(int c, unsigned int top_only)
 	if (top_only && (c < 0 || c > 127))
 	{
 		/*printf("debugger: out of range\n");*/
-		print_error(2, "can't %s, value out of range\n", stack.line_num, stack.opcode);
+		print_error(2, RANGE_ERR, stack.line_num, stack.opcode);
 	}
 	else if (c <= 0 || c > 127)
 	{
