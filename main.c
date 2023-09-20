@@ -4,11 +4,8 @@
  * @argc: The number of arguments passed to the program
  * @argv: An array of pointers to the arguments
  *
- * Return: Returns 0 if the program completes successfully, or a non-zero value otherwise.
+ * Return: Returns 0 on success, a non-zero value otherwise.
  *
- * Description: This is the main function of the program. It takes in the number of arguments 'argc'
- * and an array of pointers to these arguments 'argv'. The function then performs the necessary
- * operations as per the program's requirements.
  */
 int main(int argc, char **argv)
 {

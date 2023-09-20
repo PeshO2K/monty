@@ -8,7 +8,10 @@
  */
 void _push(stack_t **top, unsigned int line_num)
 {
-	void (*push_mode[])(stack_t **top, const int n) = {add_dnodeint, add_dnodeint_end};
+	void (*push_mode[])(stack_t **top, const int n) = {
+		add_dnodeint,
+		add_dnodeint_end
+		};
 	(void) top;
 	(void) line_num;
 	if (stack.value && is_integer(stack.value))
@@ -17,7 +20,7 @@ void _push(stack_t **top, unsigned int line_num)
 	}
 	else
 	{
-		print_error(LINE,"usage: push integer\n", stack.line_num);
+		print_error(LINE, "usage: push integer\n", stack.line_num);
 	}
 	(push_mode[stack.mode])(&stack.top, stack.n);
 }
@@ -32,7 +35,7 @@ void _push(stack_t **top, unsigned int line_num)
 void _pchar(stack_t **top, unsigned int line_num)
 {
 	(void) line_num;
-	print_dlistint( *top, 1, STR);
+	print_dlistint(*top, 1, STR);
 }
 
 /**
@@ -69,24 +72,24 @@ void _rotl(stack_t **top, unsigned int line_num)
 	stack_t *old_top;
 
 	(void) line_num;
-    if (*top == NULL || (*top)->next == NULL)
-    {
-        return;
-    }
+	if (*top == NULL || (*top)->next == NULL)
+	{
+		return;
+	}
 
-    new_top = (*top)->next;
+	new_top = (*top)->next;
 	old_top = *top;
 
-    while (old_top->next != NULL)
-    {
-        old_top = old_top->next;
-    }
+	while (old_top->next != NULL)
+	{
+		old_top = old_top->next;
+	}
 
-    old_top->next = *top;
-    (*top)->prev = old_top;
-    (*top)->next = NULL;
-    new_top->prev = NULL;
-    *top = new_top;
+	old_top->next = *top;
+	(*top)->prev = old_top;
+	(*top)->next = NULL;
+	new_top->prev = NULL;
+	*top = new_top;
 }
 
 /**
@@ -102,23 +105,23 @@ void _rotr(stack_t **top, unsigned int line_num)
 	stack_t *old_top;
 
 	(void) line_num;
-    if (*top == NULL || (*top)->next == NULL)
-    {
-        return;
-    }
+	if (*top == NULL || (*top)->next == NULL)
+	{
+		return;
+	}
 
-    new_top = *top;
-    old_top = NULL;
+	new_top = *top;
+	old_top = NULL;
 
-    while (new_top->next != NULL)
-    {
-        old_top = new_top;
-        new_top = new_top->next;
-    }
+	while (new_top->next != NULL)
+	{
+		old_top = new_top;
+		new_top = new_top->next;
+	}
 
-    old_top->next = NULL;
-    new_top->prev = NULL;
-    new_top->next = *top;
-    (*top)->prev = new_top;
-    *top = new_top;
+	old_top->next = NULL;
+	new_top->prev = NULL;
+	new_top->next = *top;
+	(*top)->prev = new_top;
+	*top = new_top;
 }

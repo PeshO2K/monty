@@ -46,7 +46,8 @@ typedef struct instruction_s
  * @USAGE: Usage mode
  * @LINE: Line mode
  */
-typedef enum{
+typedef enum
+{
 	ERROR,
 	USAGE,
 	LINE
@@ -57,20 +58,22 @@ typedef enum{
  * @STACK: Stack mode
  * @QUEUE: Queue mode
  */
-typedef enum {
+typedef enum
+{
 	STACK,
 	QUEUE
-}opMode;
+} opMode;
 
 /**
  * enum strMode - Enumeration of string modes
  * @INT: Integer mode
  * @STR: String mode
  */
-typedef enum {
+typedef enum
+{
 	INT,
 	STR
-}strMode;
+} strMode;
 
 /**
  * struct stack_vars - Structure containing stack variables
@@ -84,7 +87,8 @@ typedef enum {
  *
  * Description: This structure contains various variables related to a stack.
  */
-typedef struct{
+typedef struct
+{
 	opMode mode;
 	stack_t *top;
 	char *line;
@@ -105,13 +109,14 @@ extern stack_vars stack;
  * @DIV: Division operator
  * @MOD: Modulus operator
  */
-typedef enum{
+typedef enum
+{
 	ADD,
 	SUB,
 	MUL,
 	DIV,
 	MOD
-}operator;
+} operator;
 
 /*aux_func.c*/
 void print_error(eMode mode, const char *format, ...);

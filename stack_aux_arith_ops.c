@@ -75,6 +75,6 @@ int div_op(int a, int b)
 	{
 		return (b / a);
 	}
-	print_error(LINE, "division by zero\n",stack.line_num);
+	print_error(LINE, "division by zero\n", stack.line_num);
 	return (0);
 }

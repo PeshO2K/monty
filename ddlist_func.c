@@ -137,11 +137,11 @@ int print_string(const stack_t *top, int c, unsigned int top_only)
 	{
 		if (top == NULL)
 		{
-			print_error(LINE,"can't %s, stack empty\n", stack.line_num, stack.opcode);
+			print_error(LINE, "can't %s, stack empty\n", stack.line_num, stack.opcode);
 		}
 		if (c < 0 || c > 127)
 		{
-			print_error(LINE,"can't %s, value out of range\n");
+			print_error(LINE, "can't %s, value out of range\n");
 		}
 	}
 	else
@@ -157,5 +157,5 @@ int print_string(const stack_t *top, int c, unsigned int top_only)
 		}
 	}
 	printf("%c", c);
-	return(top_only);
+	return (top_only);
 }

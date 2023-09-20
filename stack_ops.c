@@ -4,12 +4,12 @@
  * @top: Double pointer to the top of the stack
  * @line_num: The line number
  *
- * Description: This function prints the string starting at the top of the stack.
+ * Description: prints the string starting at the top of the stack.
  */
 void _pstr(stack_t **top, unsigned int line_num)
 {
 	(void) line_num;
-	print_dlistint( *top, 0, STR);
+	print_dlistint(*top, 0, STR);
 }
 
 /**
@@ -17,7 +17,7 @@ void _pstr(stack_t **top, unsigned int line_num)
  * @top: Double pointer to the top of the stack
  * @line_num: The line number
  *
- * Description: This function prints all the elements of the stack.
+ * Description: prints all the elements of the stack.
  */
 void _pall(stack_t **top, unsigned int line_num)
 {
@@ -30,13 +30,13 @@ void _pall(stack_t **top, unsigned int line_num)
  * @top: Double pointer to the top of the stack
  * @line_num: The line number
  *
- * Description: This function prints the integer at the top of the stack.
+ * Description: prints the integer at the top of the stack.
  */
 void _pint(stack_t **top, unsigned int line_num)
 {
 	if (*top == NULL)
 	{
-		print_error(LINE,"can't %s, stack empty\n", line_num, stack.opcode);
+		print_error(LINE, "can't %s, stack empty\n", line_num, stack.opcode);
 	}
 	print_dlistint(*top, 1, INT);
 }
@@ -46,7 +46,7 @@ void _pint(stack_t **top, unsigned int line_num)
  * @top: Double pointer to the top of the stack
  * @line_num: The line number
  *
- * Description: This function removes the top element of the stack.
+ * Description: removes the top element of the stack.
  */
 void _pop(stack_t **top, unsigned int line_num)
 {
@@ -55,7 +55,7 @@ void _pop(stack_t **top, unsigned int line_num)
 	/**error handling goes here*/
 	if (*top == NULL)
 	{
-		print_error(LINE,"can't %s, an empty stack\n", line_num, stack.opcode);
+		print_error(LINE, "can't %s, an empty stack\n", line_num, stack.opcode);
 	}
 
 	next = (*top)->next;
@@ -72,7 +72,7 @@ void _pop(stack_t **top, unsigned int line_num)
  * @top: Double pointer to the top of the stack
  * @line_num: The line number
  *
- * Description: This function swaps the top two elements of the stack.
+ * Description: swaps the top two elements of the stack.
  */
 void _swap(stack_t **top, unsigned int line_num)
 {
@@ -89,7 +89,7 @@ void _swap(stack_t **top, unsigned int line_num)
 	first_top->next = second_top->next;
 	second_top->next = first_top;
 	first_top->prev = second_top;
-	if(first_top->next)
+	if (first_top->next)
 	{
 		first_top->next->prev = first_top;
 	}

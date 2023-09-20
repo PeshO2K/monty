@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * _sub - Subtracts the top element from the second top element of the stack
- * @top: Double pointer to the top of the stack
- * @line_num: The line number
+ * _sub - Subtracts top element from second top element of stack
+ * @top: Double pointer to top of stack
+ * @line_num: line number
  *
- * Description: This function subtracts the top element from the second top element of the stack.
+ * Description: subtracts top element from second top element of stack.
  */
 void _sub(stack_t **top, unsigned int line_num)
 {
@@ -13,22 +13,22 @@ void _sub(stack_t **top, unsigned int line_num)
 }
 
 /**
- * _mul - Multiplies the top two elements of the stack
- * @top: Double pointer to the top of the stack
- * @line_num: The line number
+ * _mul - Multiplies top two elements of stack
+ * @top: Double pointer to top of stack
+ * @line_num: line number
  *
- * Description: This function multiplies the top two elements of the stack.
+ * Description: multiplies top two elements of stack.
  */
 void _mul(stack_t **top, unsigned int line_num)
 {
 	compute(MUL, top, line_num);
 }
 /**
- * _div - Divides the second top element by the top element of the stack
- * @top: Double pointer to the top of the stack
- * @line_num: The line number
+ * _div - Divides second top element by top element of stack
+ * @top: Double pointer to top of stack
+ * @line_num: line number
  *
- * Description: This function divides the second top element by the top element of the stack.
+ * Description: divides second top element by top element of stack.
  */
 void _div(stack_t **top, unsigned int line_num)
 {
@@ -36,11 +36,11 @@ void _div(stack_t **top, unsigned int line_num)
 }
 
 /**
- * _add - Adds the top two elements of the stack
- * @top: Double pointer to the top of the stack
- * @line_num: The line number
+ * _add - Adds top two elements of stack
+ * @top: Double pointer to top of stack
+ * @line_num: line number
  *
- * Description: This function adds the top two elements of the stack.
+ * Description: adds top two elements of stack.
  */
 void _add(stack_t **top, unsigned int line_num)
 {
@@ -48,11 +48,11 @@ void _add(stack_t **top, unsigned int line_num)
 }
 
 /**
- * _mod - Computes the modulus of the second top element by the top element of the stack
- * @top: Double pointer to the top of the stack
- * @line_num: The line number
+ * _mod - Computes modulus of second top element by top element of stack
+ * @top: Double pointer to top of stack
+ * @line_num: line number
  *
- * Description: This function computes the modulus of the second top element by the top element of the stack.
+ * Description: computes modulus of second top element by top element of stack.
  */
 void _mod(stack_t **top, unsigned int line_num)
 {
