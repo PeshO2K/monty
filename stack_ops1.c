@@ -35,6 +35,7 @@ void _push(stack_t **top, unsigned int line_num)
 void _pchar(stack_t **top, unsigned int line_num)
 {
 	(void) line_num;
+	/*printf("Debugger: in pchar\n");*/
 	print_dlistint(*top, 1, STR);
 }
 

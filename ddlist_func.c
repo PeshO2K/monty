@@ -104,7 +104,8 @@ size_t print_dlistint(const stack_t *h, unsigned int top_only, strMode mode)
 		}
 		else if (mode == STR)
 		{
-			done = print_string(h, h->n, top_only);
+			/*printf("Debugger: str mode\n");*/
+			done = print_string(h->n, top_only);
 		}
 
 
@@ -115,6 +116,14 @@ size_t print_dlistint(const stack_t *h, unsigned int top_only, strMode mode)
 	}
 	if (mode == STR)
 	{
+		
+		if (top_only && (h == NULL))
+		{
+			/*printf("debugger: printing top only\n");*/
+			/*printf("debugger: empty top\n");*/
+			print_error(LINE, "can't %s, stack empty\n", stack.line_num, stack.opcode);
+			
+		}
 		printf("\n");
 	}
 
@@ -131,30 +140,16 @@ size_t print_dlistint(const stack_t *h, unsigned int top_only, strMode mode)
  *
  * Description: This function prints a string.
  */
-int print_string(const stack_t *top, int c, unsigned int top_only)
+int print_string(int c, unsigned int top_only)
 {
-	if (top_only)
+	if (top_only && (c < 0 || c > 127))
 	{
-		if (top == NULL)
-		{
-			print_error(LINE, "can't %s, stack empty\n", stack.line_num, stack.opcode);
-		}
-		if (c < 0 || c > 127)
-		{
-			print_error(LINE, "can't %s, value out of range\n");
-		}
+		/*printf("debugger: out of range\n");*/
+		print_error(LINE, "can't %s, value out of range\n", stack.line_num, stack.opcode);
 	}
-	else
+	else if (c <= 0 || c > 127)
 	{
-		if (top == NULL)
-		{
-			printf("\n");
 			return (1);
-		}
-		if (c <= 0 || c > 127)
-		{
-			return (1);
-		}
 	}
 	printf("%c", c);
 	return (top_only);

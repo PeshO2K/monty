@@ -154,7 +154,7 @@ void _pchar(stack_t **top, unsigned int line_num);
 void _rotr(stack_t **top, unsigned int line_num);
 void _rotl(stack_t **top, unsigned int line_num);
 void _switch_mode(stack_t **top, unsigned int line_num);
-int print_string(const stack_t *top, int c, unsigned int top_only);
+int print_string(int c, unsigned int top_only);
 
 size_t print_dlistint(const stack_t *h, unsigned int top_only, strMode mode);
 size_t dlistint_len(const stack_t *h);
