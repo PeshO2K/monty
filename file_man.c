@@ -5,7 +5,7 @@ stack_vars stack = { STACK, NULL, NULL, NULL, NULL, 0, 0 };
  * open_file - Opens a file
  * @filename: The name of the file to be opened
  *
- * Description: This function opens a file with the given filename.
+ * Description: opens a file with the given filename.
  */
 void open_file(char *filename)
 {
@@ -25,7 +25,7 @@ void open_file(char *filename)
  * read_file - Reads a file
  * @file: Pointer to the file to be read
  *
- * Description: This function reads the contents of a file pointed to by 'file'.
+ * Description: reads the contents of a file pointed to by 'file'.
  */
 void read_file(FILE *file)
 {
@@ -49,7 +49,7 @@ void read_file(FILE *file)
  * process_line - Processes a line
  * @line: The line to be processed
  *
- * Description: This function processes a given line 'line'.
+ * Description: processes a given line 'line'.
  */
 void process_line(char *line)
 {
@@ -64,7 +64,7 @@ void process_line(char *line)
 /**
  * get_op_func - Gets an operation function
  *
- * Description: This function retrieves an operation function.
+ * Description: retrieves an operation function.
  */
 void get_op_func(void)
 {
@@ -99,7 +99,7 @@ void get_op_func(void)
 			return;
 		}
 	}
-	print_error(2,"unknown instruction %s\n", stack.line_num, stack.opcode);
+	print_error(2, "unknown instruction %s\n", stack.line_num, stack.opcode);
 
 }
 
@@ -109,7 +109,7 @@ void get_op_func(void)
  *
  * Return: Returns 1 if the string is an integer, 0 otherwise.
  *
- * Description: This function checks if a given string 'str' is an integer.
+ * Description: checks if a given string 'str' is an integer.
  */
 int is_integer(char *str)
 {
@@ -118,7 +118,7 @@ int is_integer(char *str)
 	{
 		++str;
 	}
-	while(*str)
+	while (*str)
 	{
 		if (!isdigit(*str))
 		{

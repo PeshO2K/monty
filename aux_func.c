@@ -12,7 +12,8 @@
  * it exits the program with a status code of EXIT_FAILURE.
  */
 
-void print_error(eMode mode, const char *format, ...) {
+void print_error(eMode mode, const char *format, ...)
+{
 	va_list args;
 
 	va_start(args, format);
@@ -79,9 +80,8 @@ void free_dlistint(stack_t *head)
 void compute(operator sign, stack_t **top, unsigned int line_num)
 {
 	stack_t *result_node;
-	
-	int (*calculator[])(int f_n, int s_n) = 
-	{
+
+	int (*calculator[])(int f_n, int s_n) = {
 		add_op, sub_op, mul_op,
 		div_op, mod_op
 	};
@@ -104,7 +104,7 @@ void len_check(const stack_t *top)
 {
 	size_t len = dlistint_len(top);
 
-	if ( len < 2)
+	if (len < 2)
 	{
 		print_error(LINE, LEN_ERR, stack.line_num, stack.opcode);
 	}
