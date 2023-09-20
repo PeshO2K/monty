@@ -102,7 +102,7 @@ typedef struct
 extern stack_vars stack;
 
 /**
- * operator - Enumeration of operators
+ * enum - Enumeration of operators
  * @ADD: Addition operator
  * @SUB: Subtraction operator
  * @MUL: Multiplication operator
