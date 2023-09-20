@@ -30,8 +30,9 @@ void open_file(char *filename)
 void read_file(FILE *file)
 {
 	size_t len = 0;
+	ssize_t n_bytes = getline(&stack.line, &len, file);
 
-	for (stack.line_num = 1; getline(&stack.line, &len, file) != -1; stack.line_num++)
+	for (stack.line_num = 1; n_bytes != -1; stack.line_num++)
 	{
 		if (stack.line == NULL)
 		{
